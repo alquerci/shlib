@@ -9,7 +9,10 @@ __on_ctrl_c()
 __destruct()
 {
     E_OUT="$?";
-    echo "exit code: $E_OUT" >&2;
+    if [ "$E_OUT" != "$E_OK" ];
+    then    
+        echo "exit code: $E_OUT" >&2;
+    fi;
     __color_init;
     rm -r "$TMP_DIR";
     exit "$E_OUT";
