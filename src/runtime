@@ -43,6 +43,7 @@ then
     done;
 else
     main $@;
+    E_OUT="$?";
 fi;
 
 exit "$E_OUT";
