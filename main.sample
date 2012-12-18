@@ -1,22 +1,11 @@
-Main()
+main()
 {
     local argc argv;
-    argc="$BASH_ARGC";
+    argc="$#";
     argv="$@";
 
-    case "$@" in
-        *EOF)
-            E_OUT=$E_EOF;
-            ;;
-        "")
-            E_OUT=$E_EMPTY;
-            ;;
-        *)
-            echo "HELLO WORLD";
-            E_OUT=0;
-            ;;
-    esac;
-    
+    echo "HELLO WORLD";
+
     return "$E_OUT";
 };
 
